@@ -130,7 +130,6 @@ void Debug() {
                     printf("%s is blacklisted\n", filename);
 #endif
                     // Do something about it
-
                 }
                 GlobalFree(filename);
                 break;
@@ -175,7 +174,7 @@ int main(int argc, char** argv) {
         UpdateProcThreadAttribute(si.lpAttributeList, 0, PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY, &dwPolicy, sizeof(dwPolicy), NULL, NULL);
 
         CreateProcess(argv[0], args, NULL, NULL, TRUE, DEBUG_ONLY_THIS_PROCESS | EXTENDED_STARTUPINFO_PRESENT, NULL, NULL, &si, &pi);
-
+        GlobalFree(args);
 #ifdef DEBUG
         printf("Process PID %d\n", pi.dwProcessId);
 #endif
