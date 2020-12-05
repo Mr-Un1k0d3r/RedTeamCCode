@@ -59,5 +59,7 @@ VOID ModifyMem(CHAR *start, DWORD dwSize, HANDLE hProc) {
 }
 ```
 
+Verbose messages can be removed before the code is compiled by setting `DEBUG` as `FALSE`.
+
 # Credit 
 Mr.Un1k0d3r RingZer0 Team
