@@ -27,10 +27,13 @@ VOID CheckListOfExport(VOID *lib) {
 }
 
 BOOL GetBytesByName(HANDLE hDll, CHAR *name) {
-    FARPROC ptr = GetProcAddress(hDll, name) + 3;
+    FARPROC ptr = GetProcAddress(hDll, name);
     DWORD* opcode = (DWORD*)*ptr;
-    if((*opcode << 24) >> 24 == 0xe9) {
-        printf("%s is hooked\n", name);
+
+    if((*opcode >> 24) == 0xe9) {
+        if((*opcode << 8) >> 8 == 0xD18B4C) {
+            printf("%s is hooked\n", name);
+        }
     }
 }
 
@@ -41,7 +44,7 @@ int main (int argc, char **argv) {
     if(hDll == NULL) {
         ExitProcess(0);
     }
-    
+
     CheckListOfExport(hDll);
     CloseHandle(hDll);
     printf("------------------------------------------\nCompleted\n");
