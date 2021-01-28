@@ -61,5 +61,59 @@ VOID ModifyMem(CHAR *start, DWORD dwSize, HANDLE hProc) {
 
 Verbose messages can be removed before the code is compiled by setting `DEBUG` as `FALSE`.
 
+# CrowdStrike hooked ntdll.dll APIs
+
+```
+C:\Users\dev\Desktop>hook_finder_64.exe C:\Windows\System32\ntdll.dll
+Loading C:\Windows\System32\ntdll.dll
+------------------------------------------
+BASE                    0x00007FFAE0030000      MZÉ
+PE                      0x00007FFAE00300E8      PE
+ExportTableOffset       0x00007FFAE01812A0
+OffsetNameTable         0x00007FFAE01838C0
+Function Counts         0x97e (2430)
+------------------------------------------
+NtAllocateVirtualMemory is hooked
+NtAllocateVirtualMemoryEx is hooked
+NtDeviceIoControlFile is hooked
+NtGetContextThread is hooked
+NtMapViewOfSection is hooked
+NtMapViewOfSectionEx is hooked
+NtProtectVirtualMemory is hooked
+NtQueryInformationThread is hooked
+NtQueueApcThread is hooked
+NtQueueApcThreadEx is hooked
+NtReadVirtualMemory is hooked
+NtResumeThread is hooked
+NtSetContextThread is hooked
+NtSetInformationProcess is hooked
+NtSetInformationThread is hooked
+NtSuspendThread is hooked
+NtUnmapViewOfSection is hooked
+NtUnmapViewOfSectionEx is hooked
+NtWriteVirtualMemory is hooked
+ZwAllocateVirtualMemory is hooked
+ZwAllocateVirtualMemoryEx is hooked
+ZwDeviceIoControlFile is hooked
+ZwGetContextThread is hooked
+ZwMapViewOfSection is hooked
+ZwMapViewOfSectionEx is hooked
+ZwProtectVirtualMemory is hooked
+ZwQueryInformationThread is hooked
+ZwQueueApcThread is hooked
+ZwQueueApcThreadEx is hooked
+ZwReadVirtualMemory is hooked
+ZwResumeThread is hooked
+ZwSetContextThread is hooked
+ZwSetInformationProcess is hooked
+ZwSetInformationThread is hooked
+ZwSuspendThread is hooked
+ZwUnmapViewOfSection is hooked
+ZwUnmapViewOfSectionEx is hooked
+ZwWriteVirtualMemory is hooked
+------------------------------------------
+Completed
+```
+
 # Credit 
 Mr.Un1k0d3r RingZer0 Team
