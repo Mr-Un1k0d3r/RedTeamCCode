@@ -40,8 +40,9 @@ int main (int argc, char **argv) {
     printf("Loading %s\n", dll);
     if(hDll == NULL) {
         ExitProcess(0);
-    } 
+    }
     
+    CheckListOfExport(hDll);
     CloseHandle(hDll);
     printf("------------------------------------------\nCompleted\n");
     return 0;
