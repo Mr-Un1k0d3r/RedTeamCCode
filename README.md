@@ -54,6 +54,67 @@ ZwWriteVirtualMemory is hooked
 ------------------------------------------
 Completed
 ```
+# SentinelOne hooked ntdll.dll APIs
+
+```
+C:\Users\dev\Desktop>sentinel_hook_finder_64.exe C:\windows\system32\ntdll.dll
+Loading C:\windows\system32\ntdll.dll
+------------------------------------------
+BASE                    0x00007FF8EDA30000      MZÉ
+PE                      0x00007FF8EDA300E8      PE
+ExportTableOffset       0x00007FF8EDB812A0
+OffsetNameTable         0x00007FF8EDB838C0
+Functions Count         0x97e (2430)
+------------------------------------------
+KiUserApcDispatcher is hooked
+LdrLoadDll is hooked
+NtAllocateVirtualMemory is hooked
+NtCreateThreadEx is hooked
+NtCreateUserProcess is hooked
+NtFreeVirtualMemory is hooked
+NtLoadDriver is hooked
+NtMapUserPhysicalPages is hooked
+NtMapViewOfSection is hooked
+NtOpenProcess is hooked
+NtProtectVirtualMemory is hooked
+NtQuerySystemInformation is hooked
+NtQuerySystemInformationEx is hooked
+NtQueueApcThread is hooked
+NtQueueApcThreadEx is hooked
+NtReadVirtualMemory is hooked
+NtResumeThread is hooked
+NtSetContextThread is hooked
+NtSetInformationProcess is hooked
+NtSetInformationThread is hooked
+NtTerminateProcess is hooked
+NtUnmapViewOfSection is hooked
+NtWriteVirtualMemory is hooked
+RtlAddVectoredExceptionHandler is hooked
+RtlGetNativeSystemInformation is hooked
+ZwAllocateVirtualMemory is hooked
+ZwCreateThreadEx is hooked
+ZwCreateUserProcess is hooked
+ZwFreeVirtualMemory is hooked
+ZwLoadDriver is hooked
+ZwMapUserPhysicalPages is hooked
+ZwMapViewOfSection is hooked
+ZwOpenProcess is hooked
+ZwProtectVirtualMemory is hooked
+ZwQuerySystemInformation is hooked
+ZwQuerySystemInformationEx is hooked
+ZwQueueApcThread is hooked
+ZwQueueApcThreadEx is hooked
+ZwReadVirtualMemory is hooked
+ZwResumeThread is hooked
+ZwSetContextThread is hooked
+ZwSetInformationProcess is hooked
+ZwSetInformationThread is hooked
+ZwTerminateProcess is hooked
+ZwUnmapViewOfSection is hooked
+ZwWriteVirtualMemory is hooked
+------------------------------------------
+Completed
+```
 
 # PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_ALWAYS_ON.c
 
