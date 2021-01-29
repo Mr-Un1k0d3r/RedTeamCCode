@@ -46,6 +46,8 @@ VOID CleanUp() {
     PatchHook(NtUnmapViewOfSection, 0x2a, 0x00);
     PatchHook(NtUnmapViewOfSectionEx, 0xcc, 0x01);
     PatchHook(NtWriteVirtualMemory, 0x3a, 0x00);
+    
+    CloseHandle(hDll);
 }
 
 VOID PatchHook(CHAR* address, unsigned char id, char high) {
