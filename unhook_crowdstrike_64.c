@@ -27,13 +27,13 @@ VOID CleanUp() {
     FARPROC NtUnmapViewOfSectionEx = GetProcAddress(hDll, "NtUnmapViewOfSectionEx");
     FARPROC NtWriteVirtualMemory = GetProcAddress(hDll, "NtWriteVirtualMemory");
 
+    PatchHook(NtProtectVirtualMemory, 0x50, 0x00);  // unhooking first since we are going to need it to unhook APIs
     PatchHook(NtAllocateVirtualMemory, 0x18, 0x00);
     PatchHook(NtAllocateVirtualMemoryEx, 0x76, 0x00);
     PatchHook(NtDeviceIoControlFile, 0x7, 0x00);
     PatchHook(NtGetContextThread, 0xf2, 0x00);
     PatchHook(NtMapViewOfSection, 0x28, 0x00);
     PatchHook(NtMapViewOfSectionEx, 0x14, 0x01);
-    PatchHook(NtProtectVirtualMemory, 0x50, 0x00);
     PatchHook(NtQueryInformationThread, 0x25, 0x00);
     PatchHook(NtQueueApcThread, 0x45, 0x00);
     PatchHook(NtQueueApcThreadEx, 0x65, 0x01);
