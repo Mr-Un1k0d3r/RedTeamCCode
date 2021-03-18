@@ -1,6 +1,14 @@
 # RedTeamCCode
 Red Team C code repo
 
+# Want to know what is the syscall ID been used by your system
+
+```
+getsyscall.exe ntdll.dll NtProtectVirtualMemory
+ntdll.dll!NtProtectVirtualMemory at 0x00007FFDE568D010
+NtProtectVirtualMemory syscall ID 0x00000050 (80)
+```
+
 # CrowdStrike hooked ntdll.dll APIs
 
 ```
