@@ -4,12 +4,9 @@
 
 int main() {
     LPCH env = GetEnvironmentStrings();
-    while(TRUE) {
+    while(env[0] != 0x00) {
         printf("%s\n", env);
         env += strlen(env) + 1;
-        if(env[0] == 0x00) {
-            break;
-        }
     }
     return 0;
 }
